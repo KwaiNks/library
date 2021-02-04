@@ -2,10 +2,10 @@ public class LibraryRecordEntry {
 
    String itemType;
    String itemTitle;
-   boolean itemStatus;
+   String itemStatus;
    String memberAssociatedWithItem;
     
-    public LibraryRecordEntry(String itemType, String itemTitle, boolean itemStatus,  String memberAssociatedWithItem ) {
+    public LibraryRecordEntry(String itemType, String itemTitle, String itemStatus,  String memberAssociatedWithItem ) {
      this.itemType = itemType;
      this.itemTitle = itemTitle;
      this.itemStatus = itemStatus;
@@ -28,11 +28,11 @@ public class LibraryRecordEntry {
         this.itemTitle = itemTitle;
     }
 
-    public boolean getItemStatus() {
+    public String getItemStatus() {
         return itemStatus;
     }
 
-    public void setItemStatus(Boolean itemStatus) {
+    public void setItemStatus(String itemStatus) {
         this.itemStatus = itemStatus;
     }
 

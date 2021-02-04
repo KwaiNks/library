@@ -1,5 +1,4 @@
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +9,7 @@ public class LibraryRecordEntryTest {
 
     @Before
     public void setUp() {
-        libraryRecordEntry = new LibraryRecordEntry("Book", "Java for Beginners", true, "Daniel");
+        libraryRecordEntry = new LibraryRecordEntry("Book", "Java for Beginners", "Borrowed", "Daniel");
     }
 
     @Test
@@ -27,9 +26,11 @@ public class LibraryRecordEntryTest {
     
     @Test
     public void shouldReturnItemStatus() {
-        libraryRecordEntry.setItemStatus(true);
-        assertTrue(libraryRecordEntry.getItemStatus());
+        libraryRecordEntry.setItemStatus("Borrowed");
+        assertEquals("Borrowed", libraryRecordEntry.getItemStatus());
+
     }
+
     @Test
     public void shouldReturnMemberAssociatedWithItem() {
         libraryRecordEntry.setMemberAssociatedWithItem("Peter");

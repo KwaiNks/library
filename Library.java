@@ -36,13 +36,13 @@ public class Library {
     }
 
     public void borrowBook(Book bookToBorrow, Member member) {
-        boolean isBorrowed = false;
+        String bookStatus = "";
         if (libraryCollection.listOfBooks.contains(bookToBorrow)) {
-            isBorrowed = true;
+            bookStatus = "Borrowed";
             libraryCollection.listOfBooks.remove(bookToBorrow);
         } else {
-            isBorrowed = false;
+            bookStatus = "Not Available";
         }
-        libraryRecords.addToRecord(bookToBorrow.toString(), bookToBorrow.getTitle(), isBorrowed, member.getName());
+        libraryRecords.addToRecord(bookToBorrow.toString(), bookToBorrow.getTitle(), bookStatus, member.getName());
     }
 }

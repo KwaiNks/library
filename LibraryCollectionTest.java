@@ -42,6 +42,29 @@ public class LibraryCollectionTest {
     }
 
     @Test
+    public void shouldAddACdToListOfAvailableCdsInLibraryCollection() {
+        cd = new Cd("Learning Italian");
+        libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(cd);
+        assertEquals(11, libraryCollection.getTotalNumberOfCdsInTheLibraryCollection());
+    }
+
+    @Test
+    public void shouldRemoveACdFromListOfAvailableCdsInLibraryCollection() {
+        Cd cdOne = new Cd("Learning French");
+        Cd CdTwo = new Cd("Learning English");
+        libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(cdOne);
+        libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(CdTwo);
+        libraryCollection.removeCdFromTheListOfAvailableCdsInLibraryCollection(cdOne);
+        assertEquals(11, libraryCollection.getTotalNumberOfCdsInTheLibraryCollection());
+    }
+
+
+
+
+
+
+
+    @Test
     public void shouldReturnTotalNumberOfDvdsInTheLibraryCollection() {
         assertEquals(10, libraryCollection.getTotalNumberOfDvdsInTheLibraryCollection());
     }

@@ -42,6 +42,22 @@ public class LibraryCollection {
         return listOfCds.size();
     }
 
+    public void addCdToListOfAvailableCdsInLibraryCollection(Cd cdToBeAdded) {
+    listOfCds.add(cdToBeAdded);
+    }
+
+    public void removeCdFromTheListOfAvailableCdsInLibraryCollection(Cd cdToBeRemoved) {
+    listOfCds.remove(cdToBeRemoved);
+    }
+
+
+
+
+
+
+
+
+
     public int getTotalNumberOfDvdsInTheLibraryCollection() {
         return listOfDvds.size();
     }

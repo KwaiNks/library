@@ -59,11 +59,34 @@ public class LibraryTest {
     }
 
     @Test
-    public void shouldReturnABorrowedBookToTheLibraryCollection() {
+    public void shouldReturnABookToTheLibraryCollection() {
         libraryCollection.book = new Book("Java for Dummies");
         member = new Member("Daniel");
 
         library.returnBook(libraryCollection.book, member);
+
+        assertEquals(1, libraryRecords.getRecord().size());
+        assertEquals(31, library.getTotalNumberOfItemsAvailableInLibraryCollection());
+    }
+
+    @Test
+    public void shouldBorrowACdFromTheLibraryCollection() {
+        libraryCollection.cd = new Cd("Learning the Alphabet");
+        libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(libraryCollection.cd);
+        member = new Member("John");
+
+        library.borrowCd(libraryCollection.cd, member);
+
+        assertEquals(1, libraryRecords.getRecord().size());
+        assertEquals(30, library.getTotalNumberOfItemsAvailableInLibraryCollection());
+    }
+
+    @Test
+    public void shouldReturnACdToTheLibraryCollection() {
+        libraryCollection.cd = new Cd("Supplementary material");
+        member = new Member("Emily");
+
+        library.returnCd(libraryCollection.cd, member);
 
         assertEquals(1, libraryRecords.getRecord().size());
         assertEquals(31, library.getTotalNumberOfItemsAvailableInLibraryCollection());

@@ -5,74 +5,47 @@ import org.junit.Test;
 public class LibraryTest {
 
     Library library;
-    Book book;
+    int numberOfMembers = 3;
+    LibraryCollection libraryCollection;
+    LibraryRecords libraryRecords;
     Member member;
 
     @Before
     public void setUp() {
-        library = new Library(10, 10, 10, 3);
+        libraryCollection = new LibraryCollection(10, 10, 10);
+        numberOfMembers = 3;
+        libraryRecords = new LibraryRecords();
+        library = new Library(libraryCollection, numberOfMembers, libraryRecords);
     }
 
     @Test
-    public void shouldReturnTheTotalNumberOfBooksInTheLibrary() {
-        assertEquals(10, library.getTotalNumberOfBooksInTheLibrary());
+    public void shouldReturnTotalNumberOfMembersTheLibraryHas() {
+        assertEquals(3, library.getTotalNumberOfMembersTheLibraryHas());
     }
 
     @Test
-    public void shouldReturnTheTotalNumberOfCdsInTheLibrary() {
-        assertEquals(10, library.getTotalNumberOfCdsInTheLibrary());
+    public void shouldReturnTotalNumberOfItemsAvailableInLibraryCollection() {
+        libraryCollection.book = new Book("Practice your coding skills");
+        libraryCollection.addBookToListOfAvailableBooksInLibraryCollection(libraryCollection.book);
+        assertEquals(31, library.getTotalNumberOfItemsAvailableInLibraryCollection());
     }
 
     @Test
-    public void shouldReturnTheTotalNumberOfDvdsInTheLibrary() {
-        assertEquals(10, library.getTotalNumberOfDvdsInTheLibrary());
+    public void shouldAddMemberToTheListOfMembersOfTheLibrary() {
+        Member memberOne = new Member();
+        library.addMemberToTheListOfMembersOfTheLibrary(memberOne);
+        assertEquals(4, library.getTotalNumberOfMembersTheLibraryHas());
     }
 
     @Test
-    public void shouldReturnTheTotalNumberOfMembersOfTheLibrary() {
-        assertEquals(3, library.getTotalNumberOfMembersOffTheLibrary());
-    }
+    public void shouldBorrowABookFromTheLibraryCollection() {
+        libraryCollection.book = new Book("Object Oriented Programming");
+        libraryCollection.addBookToListOfAvailableBooksInLibraryCollection(libraryCollection.book);
+        member = new Member("Darrel");
 
-    @Test
-    public void shouldReturnTheTotalNumberOfAvailableTitles() {
-        book = new Book("Practice your coding skills");
-        library.addBookToListOfAvailableBooks(book);
-        assertEquals(31, library.getNumberOfAvailableTitlesInTheLibrary());
-    }
+        library.borrowBook(libraryCollection.book, member);
 
-    @Test
-    public void shouldAddABookToTheListOfBooksAvailable() {
-        book = new Book("Richmond");
-        library.addBookToListOfAvailableBooks(book);
-        assertEquals(11, library.getTotalNumberOfBooksInTheLibrary());
-    }
-
-    @Test
-    public void shouldRemoveABookFromAListOfBooksAvailable() {
-        Book book = new Book("Code Ethics");
-        Book book1 = new Book("Code Ethics 2");
-        library.addBookToListOfAvailableBooks(book1);
-        library.addBookToListOfAvailableBooks(book);
-        library.removeBookFromTheListOfBooksAvailable(book);
-        assertEquals(11, library.getTotalNumberOfBooksInTheLibrary());
-    }
-
-    @Test
-    public void shouldAddATitleToTheListOfAvailableTitles() {
-        String bookTitle = new Book("Test Driven Development").getTitle();
-        library.addTitleToTheListOfAvailableTitles(bookTitle);
-        assertEquals(31, library.getNumberOfAvailableTitlesInTheLibrary());
-    }
-
-    @Test
-    public void shouldRemoveTitleFromTheListOffAvailableTitles() {
-        Cd cdOne = new Cd("Jingle Jangle");
-        library.addTitleToTheListOfAvailableTitles(cdOne.getTitle());
-        Book bookOne = new Book("Java for beginners");
-        library.addTitleToTheListOfAvailableTitles(bookOne.getTitle());
-        Dvd dvdOne = new Dvd("Terminator");
-        library.addTitleToTheListOfAvailableTitles(dvdOne.getTitle());
-        library.removeTitleFromTheListOfAvailableTitles(bookOne.getTitle());
-        assertEquals(32, library.getNumberOfAvailableTitlesInTheLibrary());
+        assertEquals(1, libraryRecords.getRecord().size());
+        assertEquals(30, library.getTotalNumberOfItemsAvailableInLibraryCollection());
     }
 }

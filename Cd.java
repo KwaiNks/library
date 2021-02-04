@@ -20,5 +20,9 @@ public class Cd {
         this.title = title;
     }
     
+    @Override
+    public String toString(){
+        return "CD";
+    }
 
 }

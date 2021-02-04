@@ -19,4 +19,8 @@ public class Dvd {
         this.title = title;
     }
 
+    @Override
+    public String toString(){
+      return "DVD";
+  }
 }

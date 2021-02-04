@@ -20,8 +20,9 @@ public class Book {
     this.title = title;
   }
 
-/*  public boolean isBorrowed(String title) {
-    return borrowedItemsList.contains(title);
-  }*/
+  @Override
+  public String toString(){
+    return "Book";
+}
 
 }

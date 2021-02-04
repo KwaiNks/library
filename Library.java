@@ -49,4 +49,11 @@ public class Library {
         }
         libraryRecords.addToRecord(bookToBorrow.toString(), bookToBorrow.getTitle(), bookStatus, member.getName());
     }
+
+	public void returnBook(Book bookToReturn, Member member) {
+        String bookStatus = "";
+        libraryCollection.listOfBooks.add(bookToReturn);
+        bookStatus = "Returned";
+        libraryRecords.addToRecord(bookToReturn.toString(), bookToReturn.getTitle(), bookStatus, member.getName());
+	}
 }

@@ -57,4 +57,15 @@ public class LibraryTest {
         assertEquals(1, libraryRecords.getRecord().size());
         assertEquals(30, library.getTotalNumberOfItemsAvailableInLibraryCollection());
     }
+
+    @Test
+    public void shouldReturnABorrowedBookToTheLibraryCollection() {
+        libraryCollection.book = new Book("Java for Dummies");
+        member = new Member("Daniel");
+
+        library.returnBook(libraryCollection.book, member);
+
+        assertEquals(1, libraryRecords.getRecord().size());
+        assertEquals(31, library.getTotalNumberOfItemsAvailableInLibraryCollection());
+    }
 }

@@ -5,7 +5,7 @@ import org.junit.Test;
 public class LibraryTest {
 
     Library library;
-    int numberOfMembers = 3;
+    int numberOfMembers;
     LibraryCollection libraryCollection;
     LibraryRecords libraryRecords;
     Member member;
@@ -24,17 +24,26 @@ public class LibraryTest {
     }
 
     @Test
+    public void shouldAddMemberToTheListOfMembersOfTheLibrary() {
+        library.addMemberToTheListOfMembersOfTheLibrary(member);
+        assertEquals(4, library.getTotalNumberOfMembersTheLibraryHas());
+    }
+
+    @Test
+    public void shouldRemoveMemberFromTheListOfMembersOfTheLibrary() {
+        Member memberTwo = new Member();
+        Member memberThree = new Member();
+        library.addMemberToTheListOfMembersOfTheLibrary(memberTwo);
+        library.addMemberToTheListOfMembersOfTheLibrary(memberThree);
+        library.removeMemberFromTheListOfMembersOfTheLibrary(memberTwo);
+        assertEquals(4, library.getTotalNumberOfMembersTheLibraryHas());
+    }
+
+    @Test
     public void shouldReturnTotalNumberOfItemsAvailableInLibraryCollection() {
         libraryCollection.book = new Book("Practice your coding skills");
         libraryCollection.addBookToListOfAvailableBooksInLibraryCollection(libraryCollection.book);
         assertEquals(31, library.getTotalNumberOfItemsAvailableInLibraryCollection());
-    }
-
-    @Test
-    public void shouldAddMemberToTheListOfMembersOfTheLibrary() {
-        Member memberOne = new Member();
-        library.addMemberToTheListOfMembersOfTheLibrary(memberOne);
-        assertEquals(4, library.getTotalNumberOfMembersTheLibraryHas());
     }
 
     @Test

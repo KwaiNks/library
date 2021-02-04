@@ -21,18 +21,22 @@ public class Library {
             listOfMembers.add(new Member());
     }
 
-    public int getTotalNumberOfItemsAvailableInLibraryCollection() {
-        int numberOfItemsInLibraryCollection = libraryCollection.listOfBooks.size() + libraryCollection.listOfCds.size()
-                + libraryCollection.listOfDvds.size();
-        return numberOfItemsInLibraryCollection;
-    }
-
     public int getTotalNumberOfMembersTheLibraryHas() {
         return listOfMembers.size();
     }
 
     public void addMemberToTheListOfMembersOfTheLibrary(Member member) {
         listOfMembers.add(member);
+    }
+
+    public void removeMemberFromTheListOfMembersOfTheLibrary(Member memberTwo) {
+        listOfMembers.remove(memberTwo);
+    }
+
+    public int getTotalNumberOfItemsAvailableInLibraryCollection() {
+        int numberOfItemsInLibraryCollection = libraryCollection.listOfBooks.size() + libraryCollection.listOfCds.size()
+                + libraryCollection.listOfDvds.size();
+        return numberOfItemsInLibraryCollection;
     }
 
     public void borrowBook(Book bookToBorrow, Member member) {

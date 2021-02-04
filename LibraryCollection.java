@@ -50,15 +50,15 @@ public class LibraryCollection {
     listOfCds.remove(cdToBeRemoved);
     }
 
-
-
-
-
-
-
-
-
     public int getTotalNumberOfDvdsInTheLibraryCollection() {
         return listOfDvds.size();
+    }
+
+	public void addDvdToListOfAvailableDvdsInLibraryCollection(Dvd dvdToBeAdded) {
+    listOfDvds.add(dvdToBeAdded);
+    }
+
+	public void removeDvdFromTheListOfAvailableDvdsInLibraryCollection(Dvd dvdToRemove) {
+    listOfDvds.remove(dvdToRemove);
     }
 }

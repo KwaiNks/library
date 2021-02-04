@@ -91,4 +91,27 @@ public class LibraryTest {
         assertEquals(1, libraryRecords.getRecord().size());
         assertEquals(31, library.getTotalNumberOfItemsAvailableInLibraryCollection());
     }
+
+    @Test
+    public void shouldBorrowADvdFromTheLibraryCollection() {
+        libraryCollection.dvd = new Dvd("The Last Trial");
+        libraryCollection.addDvdToListOfAvailableDvdsInLibraryCollection(libraryCollection.dvd);
+        member = new Member("John");
+
+        library.borrowDvd(libraryCollection.dvd, member);
+
+        assertEquals(1, libraryRecords.getRecord().size());
+        assertEquals(30, library.getTotalNumberOfItemsAvailableInLibraryCollection());
+    }
+
+    @Test
+    public void shouldReturnADvdToTheLibraryCollection() {
+        libraryCollection.dvd = new Dvd("Supplementary material");
+        member = new Member("Nichole");
+
+        library.returnDvd(libraryCollection.dvd, member);
+
+        assertEquals(1, libraryRecords.getRecord().size());
+        assertEquals(31, library.getTotalNumberOfItemsAvailableInLibraryCollection());
+    }
 }

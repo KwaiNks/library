@@ -51,21 +51,32 @@ public class LibraryCollectionTest {
     @Test
     public void shouldRemoveACdFromListOfAvailableCdsInLibraryCollection() {
         Cd cdOne = new Cd("Learning French");
-        Cd CdTwo = new Cd("Learning English");
+        Cd cdTwo = new Cd("Learning English");
         libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(cdOne);
-        libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(CdTwo);
+        libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(cdTwo);
         libraryCollection.removeCdFromTheListOfAvailableCdsInLibraryCollection(cdOne);
         assertEquals(11, libraryCollection.getTotalNumberOfCdsInTheLibraryCollection());
     }
 
-
-
-
-
-
-
     @Test
     public void shouldReturnTotalNumberOfDvdsInTheLibraryCollection() {
         assertEquals(10, libraryCollection.getTotalNumberOfDvdsInTheLibraryCollection());
+    }
+
+    @Test
+    public void shouldAddADvdToListOfAvailableDvdsInLibraryCollection() {
+        dvd = new Dvd("Unit Testing");
+        libraryCollection.addDvdToListOfAvailableDvdsInLibraryCollection(dvd);
+        assertEquals(11, libraryCollection.getTotalNumberOfDvdsInTheLibraryCollection());
+    }
+
+    @Test
+    public void shouldRemoveADvdFromListOfAvailableDvdsInLibraryCollection() {
+        Dvd dvdOne = new Dvd("Peppa Pig");
+        Dvd dvdTwo = new Dvd("Learning English");
+        libraryCollection.addDvdToListOfAvailableDvdsInLibraryCollection(dvdOne);
+        libraryCollection.addDvdToListOfAvailableDvdsInLibraryCollection(dvdTwo);
+        libraryCollection.removeDvdFromTheListOfAvailableDvdsInLibraryCollection(dvdOne);
+        assertEquals(11, libraryCollection.getTotalNumberOfDvdsInTheLibraryCollection());
     }
 }

@@ -74,4 +74,22 @@ public class Library {
         cdStatus = "Returned";
         libraryRecords.addToRecord(cdToBeReturned.toString(), cdToBeReturned.getTitle(), cdStatus, member.getName());
 	}
+
+	public void borrowDvd(Dvd dvdToBorrow, Member member) {
+        String dvdStatus = "";
+        if (libraryCollection.listOfDvds.contains(dvdToBorrow)) {
+            dvdStatus = "Borrowed";
+            libraryCollection.removeDvdFromTheListOfAvailableDvdsInLibraryCollection(dvdToBorrow);
+        } else {
+            dvdStatus = "Not Available";
+        }
+        libraryRecords.addToRecord(dvdToBorrow.toString(), dvdToBorrow.getTitle(), dvdStatus, member.getName());
+	}
+
+	public void returnDvd(Dvd dvdToBeReturned, Member member) {
+        String dvdStatus = "";
+        libraryCollection.addDvdToListOfAvailableDvdsInLibraryCollection(dvdToBeReturned);;
+        dvdStatus = "Returned";
+        libraryRecords.addToRecord(dvdToBeReturned.toString(), dvdToBeReturned.getTitle(), dvdStatus, member.getName());
+	}
 }

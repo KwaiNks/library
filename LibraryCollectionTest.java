@@ -69,7 +69,7 @@ public class LibraryCollectionTest {
         libraryCollection.addDvdToListOfAvailableDvdsInLibraryCollection(dvd);
         assertEquals(11, libraryCollection.getTotalNumberOfDvdsInTheLibraryCollection());
     }
-
+    
     @Test
     public void shouldRemoveADvdFromListOfAvailableDvdsInLibraryCollection() {
         Dvd dvdOne = new Dvd("Peppa Pig");

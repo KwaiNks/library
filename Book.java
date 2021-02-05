@@ -2,7 +2,6 @@
 public class Book {
 
   String title;
- // boolean isBorrowed = false;
 
   public Book(String title) {
     this.title = title;
@@ -21,8 +20,7 @@ public class Book {
   }
 
   @Override
-  public String toString(){
+  public String toString() {
     return "Book";
-}
-
+  }
 }

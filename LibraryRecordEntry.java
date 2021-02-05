@@ -42,6 +42,5 @@ public class LibraryRecordEntry {
 
      public void setMemberAssociatedWithItem(String memberAssociatedWithItem) {
         this.memberAssociatedWithItem = memberAssociatedWithItem;
-    }
-    
+    }  
 }

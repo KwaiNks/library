@@ -1,5 +1,4 @@
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,8 +13,8 @@ public class LibraryRecordEntryTest {
 
     @Test
     public void shouldReturnItemType() {
-       libraryRecordEntry.setItemType("Cd");
-       assertEquals("Cd", libraryRecordEntry.getItemType());
+        libraryRecordEntry.setItemType("Cd");
+        assertEquals("Cd", libraryRecordEntry.getItemType());
     }
 
     @Test
@@ -23,7 +22,7 @@ public class LibraryRecordEntryTest {
         libraryRecordEntry.setItemTitle("Learning Java");
         assertEquals("Learning Java", libraryRecordEntry.getItemTitle());
     }
-    
+
     @Test
     public void shouldReturnItemStatus() {
         libraryRecordEntry.setItemStatus("Borrowed");

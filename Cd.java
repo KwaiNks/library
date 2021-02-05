@@ -1,5 +1,4 @@
 
-
 public class Cd {
 
     String title;
@@ -24,5 +23,4 @@ public class Cd {
     public String toString(){
         return "CD";
     }
-
 }

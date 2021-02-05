@@ -50,14 +50,14 @@ public class Library {
         libraryRecords.addToRecord(bookToBorrow.toString(), bookToBorrow.getTitle(), bookStatus, member.getName());
     }
 
-	public void returnBook(Book bookToReturn, Member member) {
+    public void returnBook(Book bookToReturn, Member member) {
         String bookStatus = "";
-        libraryCollection.addBookToListOfAvailableBooksInLibraryCollection(bookToReturn);;
+        libraryCollection.addBookToListOfAvailableBooksInLibraryCollection(bookToReturn);
         bookStatus = "Returned";
         libraryRecords.addToRecord(bookToReturn.toString(), bookToReturn.getTitle(), bookStatus, member.getName());
-	}
+    }
 
-	public void borrowCd(Cd cdToBorrow, Member member) {
+    public void borrowCd(Cd cdToBorrow, Member member) {
         String cdStatus = "";
         if (libraryCollection.listOfCds.contains(cdToBorrow)) {
             cdStatus = "Borrowed";
@@ -66,16 +66,16 @@ public class Library {
             cdStatus = "Not Available";
         }
         libraryRecords.addToRecord(cdToBorrow.toString(), cdToBorrow.getTitle(), cdStatus, member.getName());
-	}
+    }
 
-	public void returnCd(Cd cdToBeReturned, Member member) {
+    public void returnCd(Cd cdToBeReturned, Member member) {
         String cdStatus = "";
-        libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(cdToBeReturned);;
+        libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(cdToBeReturned);
         cdStatus = "Returned";
         libraryRecords.addToRecord(cdToBeReturned.toString(), cdToBeReturned.getTitle(), cdStatus, member.getName());
-	}
+    }
 
-	public void borrowDvd(Dvd dvdToBorrow, Member member) {
+    public void borrowDvd(Dvd dvdToBorrow, Member member) {
         String dvdStatus = "";
         if (libraryCollection.listOfDvds.contains(dvdToBorrow)) {
             dvdStatus = "Borrowed";
@@ -84,12 +84,12 @@ public class Library {
             dvdStatus = "Not Available";
         }
         libraryRecords.addToRecord(dvdToBorrow.toString(), dvdToBorrow.getTitle(), dvdStatus, member.getName());
-	}
+    }
 
-	public void returnDvd(Dvd dvdToBeReturned, Member member) {
+    public void returnDvd(Dvd dvdToBeReturned, Member member) {
         String dvdStatus = "";
-        libraryCollection.addDvdToListOfAvailableDvdsInLibraryCollection(dvdToBeReturned);;
+        libraryCollection.addDvdToListOfAvailableDvdsInLibraryCollection(dvdToBeReturned);
         dvdStatus = "Returned";
         libraryRecords.addToRecord(dvdToBeReturned.toString(), dvdToBeReturned.getTitle(), dvdStatus, member.getName());
-	}
+    }
 }

@@ -3,7 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class DvdTest {
-    
+
     Dvd dvd;
 
     @Before

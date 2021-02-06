@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class DvdTest {
 
-    Dvd dvd;
+   private Dvd dvd;
 
     @Before
     public void setUp() {

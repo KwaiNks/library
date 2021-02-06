@@ -3,9 +3,9 @@ import java.util.List;
 
 public class LibraryCollection {
     
-    Book book;
-    Cd cd;
-    Dvd dvd;
+    private Book book;
+    private Cd cd;
+    private Dvd dvd;
     List<Book> listOfBooks;
     List<Cd> listOfCds;
     List<Dvd> listOfDvds;
@@ -26,6 +26,13 @@ public class LibraryCollection {
         }
     }
 
+    public Book getBook() {
+		return book;
+	}
+
+    public void setBook(Book book) {
+        this.book = book;
+	}
     public int getTotalNumberOfBooksInTheLibraryCollection() {
         return listOfBooks.size();
     }
@@ -38,6 +45,14 @@ public class LibraryCollection {
         listOfBooks.remove(bookToBeRemoved);
     }
 
+    public Cd getCd() {
+		return cd;
+	}
+
+    public void setCd(Cd cd) {
+        this.cd = cd;
+	}
+
     public int getTotalNumberOfCdsInTheLibraryCollection() {
         return listOfCds.size();
     }
@@ -49,6 +64,14 @@ public class LibraryCollection {
     public void removeCdFromTheListOfAvailableCdsInLibraryCollection(Cd cdToBeRemoved) {
     listOfCds.remove(cdToBeRemoved);
     }
+
+    public Dvd getDvd() {
+		return dvd;
+	}
+
+    public void setDvd(Dvd dvd) {
+        this.dvd = dvd;
+	}
 
     public int getTotalNumberOfDvdsInTheLibraryCollection() {
         return listOfDvds.size();

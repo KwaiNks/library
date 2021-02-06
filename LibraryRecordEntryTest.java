@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class LibraryRecordEntryTest {
 
-    LibraryRecordEntry libraryRecordEntry;
+   private LibraryRecordEntry libraryRecordEntry;
 
     @Before
     public void setUp() {
@@ -27,7 +27,6 @@ public class LibraryRecordEntryTest {
     public void shouldReturnItemStatus() {
         libraryRecordEntry.setItemStatus("Borrowed");
         assertEquals("Borrowed", libraryRecordEntry.getItemStatus());
-
     }
 
     @Test

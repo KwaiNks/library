@@ -1,9 +1,9 @@
 public class LibraryRecordEntry {
 
-   String itemType;
-   String itemTitle;
-   String itemStatus;
-   String memberAssociatedWithItem;
+   private String itemType;
+   private String itemTitle;
+   private String itemStatus;
+   private String memberAssociatedWithItem;
     
     public LibraryRecordEntry(String itemType, String itemTitle, String itemStatus,  String memberAssociatedWithItem ) {
      this.itemType = itemType;
@@ -12,7 +12,7 @@ public class LibraryRecordEntry {
      this.memberAssociatedWithItem = memberAssociatedWithItem;
     }
 
-    public String getItemType() {
+ public String getItemType() {
         return itemType;
     }
 

@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class BookTest {
 
-    Book book;
+   private Book book;
 
     @Before
     public void setUp() {

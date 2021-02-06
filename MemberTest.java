@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class MemberTest {
 
-    Member member;
+    private Member member;
 
     @Before
     public void setUp() {

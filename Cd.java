@@ -1,7 +1,7 @@
 
 public class Cd {
 
-    String title;
+    private String title;
 
     public Cd(String title){
         this.title = title;

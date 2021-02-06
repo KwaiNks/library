@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class CdTest {
     
-    Cd cd;
+    private Cd cd;
 
     @Before
     public void setUp() {

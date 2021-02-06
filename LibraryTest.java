@@ -4,11 +4,11 @@ import org.junit.Test;
 
 public class LibraryTest {
     
-    Library library;
-    int numberOfMembers;
-    LibraryCollection libraryCollection;
-    LibraryRecords libraryRecords;
-    Member member;
+    private Library library;
+    private int numberOfMembers;
+    private LibraryCollection libraryCollection;
+    private LibraryRecords libraryRecords;
+    private Member member;
 
     @Before
     public void setUp() {
@@ -41,18 +41,18 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnTotalNumberOfItemsAvailableInLibraryCollection() {
-        libraryCollection.book = new Book("Practice your coding skills");
-        libraryCollection.addBookToListOfAvailableBooksInLibraryCollection(libraryCollection.book);
+        libraryCollection.setBook(new Book("Practice your coding skills"));
+        libraryCollection.addBookToListOfAvailableBooksInLibraryCollection(libraryCollection.getBook());
         assertEquals(31, library.getTotalNumberOfItemsAvailableInLibraryCollection());
     }
 
     @Test
     public void shouldBorrowABookFromTheLibraryCollection() {
-        libraryCollection.book = new Book("Object Oriented Programming");
-        libraryCollection.addBookToListOfAvailableBooksInLibraryCollection(libraryCollection.book);
+        libraryCollection.setBook(new Book("Object Oriented Programming"));
+        libraryCollection.addBookToListOfAvailableBooksInLibraryCollection(libraryCollection.getBook());
         member = new Member("Darrel");
 
-        library.borrowBook(libraryCollection.book, member);
+        library.borrowBook(libraryCollection.getBook(), member);
 
         assertEquals(1, libraryRecords.getRecord().size());
         assertEquals(30, library.getTotalNumberOfItemsAvailableInLibraryCollection());
@@ -60,10 +60,10 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnABookToTheLibraryCollection() {
-        libraryCollection.book = new Book("Java for Dummies");
+        libraryCollection.setBook(new Book("Java for Dummies"));;
         member = new Member("Daniel");
 
-        library.returnBook(libraryCollection.book, member);
+        library.returnBook(libraryCollection.getBook(), member);
 
         assertEquals(1, libraryRecords.getRecord().size());
         assertEquals(31, library.getTotalNumberOfItemsAvailableInLibraryCollection());
@@ -71,11 +71,11 @@ public class LibraryTest {
 
     @Test
     public void shouldBorrowACdFromTheLibraryCollection() {
-        libraryCollection.cd = new Cd("Learning the Alphabet");
-        libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(libraryCollection.cd);
+        libraryCollection.setCd(new Cd("Learning the Alphabet"));
+        libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(libraryCollection.getCd());
         member = new Member("John");
 
-        library.borrowCd(libraryCollection.cd, member);
+        library.borrowCd(libraryCollection.getCd(), member);
 
         assertEquals(1, libraryRecords.getRecord().size());
         assertEquals(30, library.getTotalNumberOfItemsAvailableInLibraryCollection());
@@ -83,10 +83,10 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnACdToTheLibraryCollection() {
-        libraryCollection.cd = new Cd("Supplementary material");
+        libraryCollection.setCd(new Cd("Supplementary material"));
         member = new Member("Emily");
 
-        library.returnCd(libraryCollection.cd, member);
+        library.returnCd(libraryCollection.getCd(), member);
 
         assertEquals(1, libraryRecords.getRecord().size());
         assertEquals(31, library.getTotalNumberOfItemsAvailableInLibraryCollection());
@@ -94,11 +94,11 @@ public class LibraryTest {
 
     @Test
     public void shouldBorrowADvdFromTheLibraryCollection() {
-        libraryCollection.dvd = new Dvd("The Last Trial");
-        libraryCollection.addDvdToListOfAvailableDvdsInLibraryCollection(libraryCollection.dvd);
+        libraryCollection.setDvd(new Dvd("The Last Trial"));;
+        libraryCollection.addDvdToListOfAvailableDvdsInLibraryCollection(libraryCollection.getDvd());
         member = new Member("John");
 
-        library.borrowDvd(libraryCollection.dvd, member);
+        library.borrowDvd(libraryCollection.getDvd(), member);
 
         assertEquals(1, libraryRecords.getRecord().size());
         assertEquals(30, library.getTotalNumberOfItemsAvailableInLibraryCollection());
@@ -106,10 +106,10 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnADvdToTheLibraryCollection() {
-        libraryCollection.dvd = new Dvd("Supplementary material");
+        libraryCollection.setDvd(new Dvd("Supplementary material"));
         member = new Member("Nichole");
 
-        library.returnDvd(libraryCollection.dvd, member);
+        library.returnDvd(libraryCollection.getDvd(), member);
 
         assertEquals(1, libraryRecords.getRecord().size());
         assertEquals(31, library.getTotalNumberOfItemsAvailableInLibraryCollection());

@@ -4,8 +4,8 @@ import java.util.List;
 public class Library {
 
     List<Member> listOfMembers;
-    LibraryCollection libraryCollection;
-    LibraryRecords libraryRecords;
+    private LibraryCollection libraryCollection;
+    private LibraryRecords libraryRecords;
 
     public Library(LibraryCollection libraryCollection, int numberOfMembers, LibraryRecords libraryRecords) {
         this.libraryCollection = libraryCollection;

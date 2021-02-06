@@ -10,6 +10,6 @@ private List<LibraryRecordEntry> libraryRecordEntries = new ArrayList<LibraryRec
 	}
 
 	public List<LibraryRecordEntry> getRecord() {
-		return libraryRecordEntries ;
+		return libraryRecordEntries;
 	}
 }

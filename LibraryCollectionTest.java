@@ -4,14 +4,23 @@ import org.junit.Test;
 
 public class LibraryCollectionTest {
 
-    LibraryCollection libraryCollection;
-    Book book;
-    Cd cd;
-    Dvd dvd;
+    private LibraryCollection libraryCollection;
+    private Book book;
+    private Cd cd;
+    private Dvd dvd;
 
     @Before
     public void setUp() {
         libraryCollection = new LibraryCollection(10, 10, 10);
+        book = new Book();
+        cd = new Cd();
+        dvd = new Dvd();
+    }
+
+    @Test
+    public void shouldReturnABook() {
+        libraryCollection.setBook(book);
+        assertEquals(book, libraryCollection.getBook());
     }
 
     @Test
@@ -37,6 +46,12 @@ public class LibraryCollectionTest {
     }
 
     @Test
+    public void shouldReturnACd() {
+        libraryCollection.setCd(cd);
+        assertEquals(cd, libraryCollection.getCd());
+    }
+
+    @Test
     public void shouldReturnTotalNumberOfCdsInTheLibraryCollection() {
         assertEquals(10, libraryCollection.getTotalNumberOfCdsInTheLibraryCollection());
     }
@@ -56,6 +71,12 @@ public class LibraryCollectionTest {
         libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(cdTwo);
         libraryCollection.removeCdFromTheListOfAvailableCdsInLibraryCollection(cdOne);
         assertEquals(11, libraryCollection.getTotalNumberOfCdsInTheLibraryCollection());
+    }
+
+    @Test
+    public void shouldReturnADvd() {
+        libraryCollection.setDvd(dvd);
+        assertEquals(dvd, libraryCollection.getDvd());
     }
 
     @Test

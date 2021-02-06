@@ -1,7 +1,7 @@
 
 public class Dvd {
 
-  String title;
+ private String title;
 
   public Dvd(String title) {
     this.title = title;

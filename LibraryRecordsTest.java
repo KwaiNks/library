@@ -4,8 +4,8 @@ import org.junit.Test;
 
 public class LibraryRecordsTest {
     
-    LibraryRecords libraryRecords;
-
+    private LibraryRecords libraryRecords;
+    
     @Before
     public void setUp() {
         libraryRecords = new LibraryRecords();

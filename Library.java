@@ -3,15 +3,15 @@ import java.util.List;
 
 public class Library {
 
-    List<Member> listOfMembers;
+    private List<Member> listOfMembers;
     private LibraryCollection libraryCollection;
     private LibraryRecords libraryRecords;
 
     public Library(LibraryCollection libraryCollection, int numberOfMembers, LibraryRecords libraryRecords) {
         this.libraryCollection = libraryCollection;
-        libraryCollection.listOfBooks.size();
-        libraryCollection.listOfCds.size();
-        libraryCollection.listOfDvds.size();
+        libraryCollection.getTotalNumberOfBooksInTheLibraryCollection();
+        libraryCollection.getTotalNumberOfCdsInTheLibraryCollection();
+        libraryCollection.getTotalNumberOfDvdsInTheLibraryCollection();
 
         this.libraryRecords = libraryRecords;
         libraryRecords = new LibraryRecords();
@@ -34,14 +34,15 @@ public class Library {
     }
 
     public int getTotalNumberOfItemsAvailableInLibraryCollection() {
-        int numberOfItemsInLibraryCollection = libraryCollection.listOfBooks.size() + libraryCollection.listOfCds.size()
-                + libraryCollection.listOfDvds.size();
+        int numberOfItemsInLibraryCollection = libraryCollection.getTotalNumberOfBooksInTheLibraryCollection()
+                + libraryCollection.getTotalNumberOfCdsInTheLibraryCollection()
+                + libraryCollection.getTotalNumberOfDvdsInTheLibraryCollection();
         return numberOfItemsInLibraryCollection;
     }
 
     public void borrowBook(Book bookToBorrow, Member member) {
         String bookStatus = "";
-        if (libraryCollection.listOfBooks.contains(bookToBorrow)) {
+        if (libraryCollection.getListOfBooks().contains(bookToBorrow)) {
             bookStatus = "Borrowed";
             libraryCollection.removeBookFromTheListOfAvailableBooksInLibraryCollection(bookToBorrow);
         } else {
@@ -51,15 +52,14 @@ public class Library {
     }
 
     public void returnBook(Book bookToReturn, Member member) {
-        String bookStatus = "";
         libraryCollection.addBookToListOfAvailableBooksInLibraryCollection(bookToReturn);
-        bookStatus = "Returned";
+        String bookStatus = "Returned";
         libraryRecords.addToRecord(bookToReturn.toString(), bookToReturn.getTitle(), bookStatus, member.getName());
     }
 
     public void borrowCd(Cd cdToBorrow, Member member) {
         String cdStatus = "";
-        if (libraryCollection.listOfCds.contains(cdToBorrow)) {
+        if (libraryCollection.getListOfCds().contains(cdToBorrow)) {
             cdStatus = "Borrowed";
             libraryCollection.removeCdFromTheListOfAvailableCdsInLibraryCollection(cdToBorrow);
         } else {
@@ -68,16 +68,15 @@ public class Library {
         libraryRecords.addToRecord(cdToBorrow.toString(), cdToBorrow.getTitle(), cdStatus, member.getName());
     }
 
-    public void returnCd(Cd cdToBeReturned, Member member) {
-        String cdStatus = "";
+    public void returnCd(Cd cdToBeReturned, Member member){ 
         libraryCollection.addCdToListOfAvailableCdsInLibraryCollection(cdToBeReturned);
-        cdStatus = "Returned";
+        String cdStatus = "Returned";
         libraryRecords.addToRecord(cdToBeReturned.toString(), cdToBeReturned.getTitle(), cdStatus, member.getName());
     }
 
     public void borrowDvd(Dvd dvdToBorrow, Member member) {
         String dvdStatus = "";
-        if (libraryCollection.listOfDvds.contains(dvdToBorrow)) {
+        if (libraryCollection.getListOfDvds().contains(dvdToBorrow)) {
             dvdStatus = "Borrowed";
             libraryCollection.removeDvdFromTheListOfAvailableDvdsInLibraryCollection(dvdToBorrow);
         } else {
@@ -87,9 +86,8 @@ public class Library {
     }
 
     public void returnDvd(Dvd dvdToBeReturned, Member member) {
-        String dvdStatus = "";
         libraryCollection.addDvdToListOfAvailableDvdsInLibraryCollection(dvdToBeReturned);
-        dvdStatus = "Returned";
+        String dvdStatus = "Returned";
         libraryRecords.addToRecord(dvdToBeReturned.toString(), dvdToBeReturned.getTitle(), dvdStatus, member.getName());
     }
 }

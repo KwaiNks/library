@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryCollection {
-    
+
     private Book book;
     private Cd cd;
     private Dvd dvd;
-    List<Book> listOfBooks;
-    List<Cd> listOfCds;
-    List<Dvd> listOfDvds;
+    private List<Book> listOfBooks;
+    private List<Cd> listOfCds;
+    private List<Dvd> listOfDvds;
 
     public LibraryCollection(int numberOfBooks, int numberOfCds, int numberOfDvds) {
 
@@ -27,61 +27,86 @@ public class LibraryCollection {
     }
 
     public Book getBook() {
-		return book;
-	}
+        return book;
+    }
 
     public void setBook(Book book) {
         this.book = book;
-	}
+    }
+
+    public void setListOfBooks(List<Book> listOfBooks) {
+        this.listOfBooks = listOfBooks;
+    }
+
+    public List<Book> getListOfBooks() {
+        return listOfBooks;
+    }
+
     public int getTotalNumberOfBooksInTheLibraryCollection() {
-        return listOfBooks.size();
+        return getListOfBooks().size();
     }
 
     public void addBookToListOfAvailableBooksInLibraryCollection(Book bookToBeAdded) {
-        listOfBooks.add(bookToBeAdded);
+        getListOfBooks().add(bookToBeAdded);
     }
 
     public void removeBookFromTheListOfAvailableBooksInLibraryCollection(Book bookToBeRemoved) {
-        listOfBooks.remove(bookToBeRemoved);
+        getListOfBooks().remove(bookToBeRemoved);
     }
 
     public Cd getCd() {
-		return cd;
-	}
+        return cd;
+    }
 
     public void setCd(Cd cd) {
         this.cd = cd;
-	}
+    }
+
+    public void setListOfCds(List<Cd> listOfCds) {
+        this.listOfCds = listOfCds;
+    }
+
+    public List<Cd> getListOfCds() {
+        return listOfCds;
+    }
 
     public int getTotalNumberOfCdsInTheLibraryCollection() {
-        return listOfCds.size();
+        return getListOfCds().size();
     }
 
     public void addCdToListOfAvailableCdsInLibraryCollection(Cd cdToBeAdded) {
-    listOfCds.add(cdToBeAdded);
+        getListOfCds().add(cdToBeAdded);
     }
 
     public void removeCdFromTheListOfAvailableCdsInLibraryCollection(Cd cdToBeRemoved) {
-    listOfCds.remove(cdToBeRemoved);
+        getListOfCds().remove(cdToBeRemoved);
     }
 
     public Dvd getDvd() {
-		return dvd;
-	}
+        return dvd;
+    }
 
     public void setDvd(Dvd dvd) {
         this.dvd = dvd;
-	}
+    }
+
+    public void setListOfDvds(List<Dvd> listOfDvds) {
+        this.listOfDvds = listOfDvds;
+    }
+
+    public List<Dvd> getListOfDvds() {
+        return listOfDvds;
+    }
 
     public int getTotalNumberOfDvdsInTheLibraryCollection() {
-        return listOfDvds.size();
+        return getListOfDvds().size();
     }
 
-	public void addDvdToListOfAvailableDvdsInLibraryCollection(Dvd dvdToBeAdded) {
-    listOfDvds.add(dvdToBeAdded);
+    public void addDvdToListOfAvailableDvdsInLibraryCollection(Dvd dvdToBeAdded) {
+        getListOfDvds().add(dvdToBeAdded);
     }
 
-	public void removeDvdFromTheListOfAvailableDvdsInLibraryCollection(Dvd dvdToRemove) {
-    listOfDvds.remove(dvdToRemove);
+    public void removeDvdFromTheListOfAvailableDvdsInLibraryCollection(Dvd dvdToRemove) {
+        getListOfDvds().remove(dvdToRemove);
     }
 }

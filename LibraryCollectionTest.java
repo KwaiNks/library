@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,19 +9,26 @@ public class LibraryCollectionTest {
     private Book book;
     private Cd cd;
     private Dvd dvd;
+    private List<Book> listOfBooks;
+    private List<Cd> listOfCds;
+    private List<Dvd> listOfDvds;
+
 
     @Before
     public void setUp() {
         libraryCollection = new LibraryCollection(10, 10, 10);
-        book = new Book();
-        cd = new Cd();
-        dvd = new Dvd();
     }
 
     @Test
     public void shouldReturnABook() {
         libraryCollection.setBook(book);
         assertEquals(book, libraryCollection.getBook());
+    }
+
+    @Test
+    public void shouldReturnTheListOfBooksInLibraryCollection() {
+        libraryCollection.setListOfBooks(listOfBooks);
+        assertEquals(listOfBooks, libraryCollection.getListOfBooks());
     }
 
     @Test
@@ -52,6 +60,12 @@ public class LibraryCollectionTest {
     }
 
     @Test
+    public void shouldReturnTheListOfCdsInLibraryCollection() {
+        libraryCollection.setListOfCds(listOfCds);
+        assertEquals(listOfCds, libraryCollection.getListOfCds());
+    }
+
+    @Test
     public void shouldReturnTotalNumberOfCdsInTheLibraryCollection() {
         assertEquals(10, libraryCollection.getTotalNumberOfCdsInTheLibraryCollection());
     }
@@ -77,6 +91,12 @@ public class LibraryCollectionTest {
     public void shouldReturnADvd() {
         libraryCollection.setDvd(dvd);
         assertEquals(dvd, libraryCollection.getDvd());
+    }
+
+    @Test
+    public void shouldReturnTheListOfDdsInLibraryCollection() {
+        libraryCollection.setListOfDvds(listOfDvds);
+        assertEquals(listOfDvds, libraryCollection.getListOfDvds());
     }
 
     @Test
